@@ -1,15 +1,14 @@
-# Project technologies
+# Project agenda
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+There are used ReactJs, Webpack, Eslint and scss modules
 
-## Available Scripts
+## How did this set up?
 
-In the project directory, you can run:
-
-### `yarn start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Eslint install 
+- Create two files: `.eslintrc.js` and `.eslintignore` with known purpose
+- Install all necessary dependencies:
+  - run next command for installing starter pack of dependencies, ([source](https://www.npmjs.com/package/eslint-config-airbnb)):
+    ``` console
+    npx install-peerdeps --dev eslint-config-airbnb
+    ```
+  - install [`eslint-plugin-import-newlines`](https://www.npmjs.com/package/eslint-plugin-import-newlines) for checking whether have to make line break
