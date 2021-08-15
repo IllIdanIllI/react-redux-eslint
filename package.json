@@ -3,45 +3,58 @@
   "version": "0.0.0",
   "private": true,
   "dependencies": {
-    "@testing-library/jest-dom": "^5.11.4",
-    "@testing-library/react": "^11.1.0",
-    "@testing-library/user-event": "^12.1.10",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-scripts": "4.0.3",
     "web-vitals": "^1.0.1"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+    "start": "webpack serve --mode=development --progress --open",
+    "start-analysis": "NEED_BUNDLE_ANALYSIS=true webpack serve --mode=development --progress --open",
+    "build": "webpack --mode=production --progress",
+    "build-analysis": "NEED_BUNDLE_ANALYSIS=true webpack --mode=production --progress",
+    "lint": "yarn lint-js && yarn lint-scss",
+    "lint:fix": " yarn lint-js:fix && yarn lint-scss:fix",
+    "lint-js": "eslint ./src --ext .js,.jsx",
+    "lint-js:fix": "eslint ./src --ext .js,.jsx --fix",
+    "lint-scss": "stylelint **/*.scss",
+    "lint-scss:fix": "stylelint **/*.scss --fix"
   },
   "devDependencies": {
+    "@babel/core": "^7.15.0",
+    "@babel/plugin-proposal-class-properties": "^7.14.5",
+    "@babel/plugin-transform-runtime": "^7.15.0",
+    "@babel/preset-env": "^7.15.0",
+    "@babel/preset-react": "^7.14.5",
+    "@svgr/webpack": "^5.5.0",
+    "babel-eslint": "^10.1.0",
+    "babel-loader": "^8.2.2",
+    "babel-plugin-transform-remove-console": "^6.9.4",
+    "clean-webpack-plugin": "^4.0.0-alpha.0",
+    "css-loader": "^6.2.0",
+    "css-minimizer-webpack-plugin": "^3.0.2",
+    "dotenv": "^10.0.0",
+    "envalid": "^7.2.0",
     "eslint": "^7.2.0",
     "eslint-config-airbnb": "18.2.1",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-import-newlines": "^1.1.4",
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-react": "^7.21.5",
-    "eslint-plugin-react-hooks": "^1.7.0"
+    "eslint-plugin-react-hooks": "^1.7.0",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^5.3.2",
+    "mini-css-extract-plugin": "^2.2.0",
+    "sass": "^1.37.5",
+    "sass-loader": "^12.1.0",
+    "style-loader": "^3.2.1",
+    "stylelint": "^13.13.1",
+    "stylelint-config-recommended-scss": "^4.3.0",
+    "stylelint-config-standard": "^22.0.0",
+    "stylelint-scss": "^3.20.1",
+    "url-loader": "^4.1.1",
+    "webpack": "^5.50.0",
+    "webpack-bundle-analyzer": "^4.4.2",
+    "webpack-cli": "^4.7.2",
+    "webpack-dev-server": "^3.11.2"
   }
 }

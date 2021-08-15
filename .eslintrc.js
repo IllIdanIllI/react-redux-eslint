@@ -2,19 +2,18 @@ module.exports = {
   env: { browser: true, es6: true },
   extends: ['plugin:react/recommended', 'airbnb'],
   globals: { Atomics: 'readonly', SharedArrayBuffer: 'readonly' },
-  parserOptions:
- {
+  parserOptions: {
    ecmaFeatures: { jsx: true },
    ecmaVersion: 2018,
    sourceType: 'module',
  },
+  parser: 'babel-eslint',
   plugins: [
     'import-newlines',
     'react',
     'react-hooks',
   ],
-  rules:
- {
+  rules: {
    'import-newlines/enforce': ['error', { items: 2 }],
    'react-hooks/rules-of-hooks': 'error',
    'react-hooks/exhaustive-deps': 'warn',
@@ -60,10 +59,10 @@ module.exports = {
       { blankLine: 'always', prev: '*', next: 'switch' },
       { blankLine: 'always', prev: 'if', next: '*' },
       { blankLine: 'always', prev: '*', next: 'if' }],
-   'react/jsx-filename-extension': [1, { extensions: ['.ts', '.tsx'] }],
+   'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }],
    'no-tabs': ['error', { allowIndentationTabs: true }],
    quotes: ['error', 'single'],
-   'indent' : ['error', 2, { SwitchCase: 1, MemberExpression: 1 }],
+   indent: ['error', 2, { SwitchCase: 1, MemberExpression: 1 }],
    'comma-dangle': ['error', 'always-multiline'],
    'consistent-return': ['warn'],
    'no-mixed-spaces-and-tabs': 'off',
@@ -72,4 +71,5 @@ module.exports = {
    }],
    'react/jsx-props-no-spreading': ['error', { custom: 'ignore' }],
  },
+  settings: { 'import/resolver': { node: { paths: [''] } } },
 };
