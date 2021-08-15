@@ -17,7 +17,8 @@
     "lint-js": "eslint ./src --ext .js,.jsx",
     "lint-js:fix": "eslint ./src --ext .js,.jsx --fix",
     "lint-scss": "stylelint **/*.scss",
-    "lint-scss:fix": "stylelint **/*.scss --fix"
+    "lint-scss:fix": "stylelint **/*.scss --fix",
+    "prepare": "husky install"
   },
   "devDependencies": {
     "@babel/core": "^7.15.0",
@@ -43,6 +44,7 @@
     "eslint-plugin-react-hooks": "^1.7.0",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.3.2",
+    "husky": "^7.0.0",
     "mini-css-extract-plugin": "^2.2.0",
     "sass": "^1.37.5",
     "sass-loader": "^12.1.0",
