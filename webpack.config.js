@@ -78,7 +78,7 @@ const combinePlugins = () => {
 
 const config = () => ({
   entry: {
-    main: [path.resolve(__dirname, 'src/index.jsx')],
+    main: [path.resolve(__dirname, 'src/index.tsx')],
   },
   output: {
     path: OUTPUT_PATH,
@@ -89,7 +89,7 @@ const config = () => ({
 
   },
   resolve: {
-    extensions: ['.js', '.jsx', '.json'],
+    extensions: ['.js', '.jsx','.ts', '.tsx', '.json'],
     alias: {
       src: path.resolve(__dirname, 'src'),
     },
@@ -98,7 +98,7 @@ const config = () => ({
   module: {
     rules: [
       {
-        test: /\.(js|jsx)$/,
+        test: /\.(ts|tsx|js|jsx)$/,
         use: [
           {
             loader: 'babel-loader',
